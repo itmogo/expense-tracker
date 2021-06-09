@@ -14,7 +14,7 @@ function App() {
     }}>
     
     <div className="container contapp">
-  <div><marquee><i><h5> Aunty Maggie's Expense Tracker Application</h5></i></marquee>
+  <div><i><h5> Aunty Maggie's Expense Tracker Application</h5></i>
       <div className="row">
         <div className="col-md-5">
         <h6>Daily Expense</h6>
