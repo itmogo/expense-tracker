@@ -14,21 +14,21 @@ function App() {
     }}>
     
     <div className="container contapp">
-    <div><marquee><h3> A Note Book Application</h3></marquee>
+  <div><marquee><i><h5> Aunty Maggie's Expense Tracker Application</h5></i></marquee>
       <div className="row">
         <div className="col-md-5">
-        <h6>Note App Form</h6>
+        <h6>Daily Expense</h6>
           <UserForm />
         </div>
 
         <div className="col-md-7">
-       <h6>Note App Details</h6>
+       <h6>Expense Records</h6>
           <UserList />
         </div>
       </div>
     </div>
-    </div>
-    </div>
+    </div>  
+    </div> 
 
   );
 }

@@ -36,53 +36,74 @@ function UserForm(props) {
 
   return (
     <div>
-      <form className="formShadow"> 
+      <form className="formShadow">
         <div>
-         <Form.Group controlId="formBasicEmail">
-          <Form.Label><b>Note Title</b></Form.Label>
-          <Form.Control 
-          type="text" 
-          placeholder="Enter your note title" 
-          name="noteTitle"
-          value={state.noteTitle} //the value will the same as data in the state
-          onChange={handleOnChange} //we setup onchange to call our handle onchange function
-          required />
-          </Form.Group>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>
+              <b>Item or Service</b>
+            </Form.Label>
+           {/*} <Form.Control
+              type="text"
+              placeholder="Enter your note title"
+              name="noteTitle"
+              value={state.noteTitle} //the value will the same as data in the state
+              onChange={handleOnChange} //we setup onchange to call our handle onchange function
+              required
+  />*/}
 
+            <select            
+              class="form-select"
+              type="text"
+              value={state.noteTitle}
+              name="noteTitle"
+              aria-label="Default select example"            
+              onChange={handleOnChange}            >
+              <option selected>Please select your item or service</option>
+              <option value={state.food}>Food and Drink</option>
+              <option value={state.accomodation}>Accomodation</option>
+              <option value={state.transport}>Transportation</option>
+              <option value={state.house}>Housing and Rent</option>
+              <option value={state.misc}>Miscellaneous</option>
+            </select>
+          </Form.Group>
         </div>
         <br />
         <Form.Group controlId="formBasicEmail">
-          <Form.Label><b>Date Recorded</b></Form.Label>
-          <Form.Control 
-          type="date"
-          placeholder="Enter your date"
-          name="noteDate"
-          value={state.noteDate}
-          onChange={handleOnChange} //we setup onchange to call our handle onchange function
-          required/>         
+          <Form.Label>
+          <i class="far fa-calendar-alt"></i><b>Date Purchased</b>
+          </Form.Label>
+          <Form.Control
+            type="date"
+            placeholder="Enter your date"
+            name="noteDate"
+            value={state.noteDate}
+            onChange={handleOnChange} //we setup onchange to call our handle onchange function
+            required
+          />
         </Form.Group>
-       
+
         <br />
         <Form.Group>
-          <Form.Label><b>Note Text</b></Form.Label><br />         
-            <textarea
-            type="text"
+          <Form.Label>
+          <i class="fab fa-gg-circle"></i><b>Amount Paid - GH¢</b>
+          </Form.Label>
+          <br />
+          <Form.Control
+            type="number"
             name="noteText"
             value={state.noteText}
             onChange={handleOnChange} //we setup onchange to call our handle onchange function
-            placeholder="Enter your text here"
+            placeholder="Enter amount paid"
             required
-            row="5"
-            cols="40"></textarea>
+          />
         </Form.Group>
-        
-        
+
         <br />
 
         <div>
           {/* the create user button call the handleSubmit functon when clicked */}
           <Button type="button" variant="primary" onClick={handleSubmit}>
-            <span>Add New Note</span>
+            <span> New Expense</span>
           </Button>
         </div>
       </form>

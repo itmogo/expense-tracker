@@ -36,26 +36,33 @@ function EditUserForm(props) {
 
   return (
     <div>
-      <form>
+      <form className="editForm">
         <div>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Note Title </Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter your note title"
-              name="noteTitle"
-              value={state.noteTitle} //the value will the same as data in the state
-              onChange={handleOnChange} //we setup onchange to call our handle onchange function
-              required
-            />
+            <Form.Label>Item or Service </Form.Label>
+            <select            
+            class="form-select"
+            type="text"
+            value={state.noteTitle}
+            name="noteTitle"
+            aria-label="Default select example"            
+            onChange={handleOnChange}            >
+            <option selected>Please select your item or service</option>
+            <option value={state.food}>Food and Drink</option>
+            <option value={state.accomodation}>Accomodation</option>
+            <option value={state.transport}>Transportation</option>
+            <option value={state.house}>Housing and Rent</option>
+            <option value={state.misc}>Miscellaneous</option>
+          </select>
+
           </Form.Group>
         </div>
         <br />
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Date Recorded</Form.Label>
+          <Form.Label>Date Purchased</Form.Label>
           <Form.Control
             type="date"
-            placeholder="Enter note date"
+            placeholder="Enter date of purchase"
             name="noteDate"
             value={state.noteDate}
             onChange={handleOnChange} //we setup onchange to call our handle onchange function
@@ -64,24 +71,21 @@ function EditUserForm(props) {
         </Form.Group>
         <br />
         <Form.Group>
-          <Form.Label>Note Text</Form.Label><br/>
-          <textarea
-            type="text"
+          <Form.Label>Amount Paid - GH</Form.Label><br/>
+          <Form.Control
+            type="number"
             name="noteText"
             value={state.noteText}
             onChange={handleOnChange} //we setup onchange to call our handle onchange function
-            placeholder="Enter your notes"
+            placeholder="Enter amount paid"
             required
-            row="5"
-            cols="40"
-
-          />
+             />
         </Form.Group>
         <br />
           <div>
           {/* the create user button call the handleSubmit functon when clicked */}
           <Button type="button" variant="primary" onClick={handleSubmit}>
-            Update Note 
+            Update Expense 
           </Button>
         </div>
       </form>
