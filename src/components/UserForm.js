@@ -40,6 +40,7 @@ function UserForm(props) {
         <div>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>
+            <i class="fa fa-bars" aria-hidden="true"></i>
               <b>Item or Service</b>
             </Form.Label>
            {/*} <Form.Control
